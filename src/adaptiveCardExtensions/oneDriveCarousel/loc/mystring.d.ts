@@ -12,6 +12,10 @@ declare interface IOneDriveCarouselAdaptiveCardExtensionStrings {
   ErrorMessage: string;
   SelectedDriveIdDropdownLabel: string;
   TimerMinutesSliderLabel: string;
+  DetailsLabel: string;
+  FileNameLabel: string;
+  SizeLabel: string;
+  ModifiedLabel: string;
 }
 
 declare module 'OneDriveCarouselAdaptiveCardExtensionStrings' {
