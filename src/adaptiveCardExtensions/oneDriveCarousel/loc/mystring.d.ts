@@ -10,6 +10,8 @@ declare interface IOneDriveCarouselAdaptiveCardExtensionStrings {
   PrimaryText: string;
   QuickViewButton: string;
   ErrorMessage: string;
+  SelectedDriveIdDropdownLabel: string;
+  TimerMinutesSliderLabel: string;
 }
 
 declare module 'OneDriveCarouselAdaptiveCardExtensionStrings' {

@@ -12,6 +12,7 @@ export interface IOneDriveCarouselAdaptiveCardExtensionProps {
   description: string;
   iconProperty: string;
   selectedDriveId: string;
+  timerMinutes: number;
 }
 
 export interface IOneDriveCarouselAdaptiveCardExtensionState {
@@ -31,6 +32,7 @@ export default class OneDriveCarouselAdaptiveCardExtension extends BaseAdaptiveC
   IOneDriveCarouselAdaptiveCardExtensionState
 > {
   private _deferredPropertyPane: OneDriveCarouselPropertyPane | undefined;
+  private updateImageTimer;
 
   public onInit(): Promise<void> {
     this.state = {
@@ -51,7 +53,7 @@ export default class OneDriveCarouselAdaptiveCardExtension extends BaseAdaptiveC
       .api(`/${gu.path_me}/${gu.path_drives}`)
       .select(`${gu.prop_id},${gu.prop_name}`)
       .get((error, drives) => {
-        if(error) {
+        if (error) {
           this.setError(error);
           return;
         }
@@ -62,8 +64,12 @@ export default class OneDriveCarouselAdaptiveCardExtension extends BaseAdaptiveC
         
         this.loadDrives();
 
-        if(this.properties.selectedDriveId) {
+        if (this.properties.selectedDriveId) {
           this.loadTargetDriveItems();
+
+          if (this.properties.timerMinutes) {
+            this.updateImageTimer = setInterval(this.updateImageIndex, (this.properties.timerMinutes * 60 * 1000));
+          }
         }
       });
     });
@@ -96,7 +102,13 @@ export default class OneDriveCarouselAdaptiveCardExtension extends BaseAdaptiveC
       return;
     }
 
-    this.loadTargetDriveItems();
+    if (propertyPath == "selectedDriveId") {
+      this.loadTargetDriveItems();
+    }
+    else if (propertyPath == "timerMinutes") {
+      clearInterval(this.updateImageTimer);
+      this.updateImageTimer = setInterval(this.updateImageIndex, (this.properties.timerMinutes * 60 * 1000));
+    }
   }
 
   protected renderCard(): string | undefined {
@@ -112,7 +124,7 @@ export default class OneDriveCarouselAdaptiveCardExtension extends BaseAdaptiveC
     await graphClient.api(`/${gu.path_me}/${gu.path_drives}/${this.state.rootDriveId}/${gu.path_root}/${gu.path_children}`)
           .select(`${gu.prop_id},${gu.prop_name}`)
           .get((error, drives) => {
-            if(error) {
+            if (error) {
               this.setError(error);
               return;
             }
@@ -128,7 +140,7 @@ export default class OneDriveCarouselAdaptiveCardExtension extends BaseAdaptiveC
       client.api(`/${gu.path_me}/${gu.path_drives}/${this.state.rootDriveId}/${gu.path_items}/${this.properties.selectedDriveId}`)
         .expand(gu.path_children)
         .get((error, targetFolder: MicrosoftGraph.DriveItem) => {          
-          if(error) {
+          if (error) {
             this.setError(error);
             return;
           }
@@ -138,6 +150,22 @@ export default class OneDriveCarouselAdaptiveCardExtension extends BaseAdaptiveC
           });
         });
     });
+  }
+
+  private updateImageIndex = () => {
+    if(this.state.targetFolder && 
+      this.state.targetFolder.children && 
+      this.state.targetFolder.children.length > 0) {      
+        var i = this.state.itemIndex;
+        i++;
+        if(i >= this.state.targetFolder.children.length) {
+          i = 0;
+        }
+
+        this.setState({
+          itemIndex: i
+        });
+    }
   }
 
   private setError = (error: object) => {

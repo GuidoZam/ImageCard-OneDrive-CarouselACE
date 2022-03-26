@@ -1,4 +1,4 @@
-import { IPropertyPaneConfiguration, PropertyPaneTextField, IPropertyPaneDropdownOption, PropertyPaneDropdown, PropertyPaneDynamicField } from '@microsoft/sp-property-pane';
+import { IPropertyPaneConfiguration, PropertyPaneTextField, IPropertyPaneDropdownOption, PropertyPaneDropdown, PropertyPaneDynamicField, PropertyPaneSlider } from '@microsoft/sp-property-pane';
 import * as strings from 'OneDriveCarouselAdaptiveCardExtensionStrings';
 
 export class OneDriveCarouselPropertyPane {
@@ -22,9 +22,15 @@ export class OneDriveCarouselPropertyPane {
                   multiline: true
                 }),
                 PropertyPaneDropdown("selectedDriveId", {
-                  label: "strings.SelectedDriveDropdownLabel",
+                  label: strings.SelectedDriveIdDropdownLabel,
                   options: drivesResults,
                 }),
+                PropertyPaneSlider("timerMinutes", {
+                  label: strings.TimerMinutesSliderLabel,
+                  min: 1,
+                  max: 60,
+                  step: 1
+                })
               ]
             }
           ]

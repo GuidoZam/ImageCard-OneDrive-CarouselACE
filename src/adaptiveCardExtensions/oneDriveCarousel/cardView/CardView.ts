@@ -36,7 +36,7 @@ export class CardView extends BaseImageCardView<IOneDriveCarouselAdaptiveCardExt
   public get data(): IImageCardParameters {
     return {
       primaryText: (this.state.error) ? strings.ErrorMessage : ((this.properties.description) ? this.properties.description : strings.PrimaryText),
-      imageUrl: (this.state.error) ? require('../assets/Error.png') : ((this.state.targetFolder && this.state.targetFolder.children) ? this.state.targetFolder.children[0].webUrl : require('../assets/MicrosoftLogo.png'))
+      imageUrl: (this.state.error) ? require('../assets/Error.png') : ((this.state.targetFolder && this.state.targetFolder.children) ? this.state.targetFolder.children[this.state.itemIndex].webUrl : require('../assets/MicrosoftLogo.png'))
     };
   }
 
