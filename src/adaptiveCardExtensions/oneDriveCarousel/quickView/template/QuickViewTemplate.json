@@ -65,7 +65,7 @@
                           "items": [
                               {
                                   "type": "TextBlock",
-                                  "text": "${currentItem.size}",
+                                  "text": "${currentItem.image.width} x ${currentItem.image.height}",
                                   "wrap": true
                               }
                           ]
