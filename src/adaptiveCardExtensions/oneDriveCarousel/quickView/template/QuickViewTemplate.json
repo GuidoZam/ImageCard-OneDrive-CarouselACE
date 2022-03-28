@@ -95,7 +95,7 @@
                           "items": [
                               {
                                   "type": "TextBlock",
-                                  "text": "${currentItem.lastModifiedDateTime}",
+                                  "text": "${formatDateTime(currentItem.lastModifiedDateTime, 'dd/MM/yyyy')}",
                                   "wrap": true
                               }
                           ]
