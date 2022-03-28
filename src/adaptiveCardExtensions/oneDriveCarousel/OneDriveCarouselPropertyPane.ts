@@ -1,4 +1,4 @@
-import { IPropertyPaneConfiguration, PropertyPaneTextField, IPropertyPaneDropdownOption, PropertyPaneDropdown, PropertyPaneDynamicField, PropertyPaneSlider } from '@microsoft/sp-property-pane';
+import { IPropertyPaneConfiguration, PropertyPaneTextField, IPropertyPaneDropdownOption, PropertyPaneDropdown, PropertyPaneSlider, PropertyPaneToggle } from '@microsoft/sp-property-pane';
 import * as strings from 'OneDriveCarouselAdaptiveCardExtensionStrings';
 
 export class OneDriveCarouselPropertyPane {
@@ -30,6 +30,9 @@ export class OneDriveCarouselPropertyPane {
                   min: 1,
                   max: 60,
                   step: 1
+                }),
+                PropertyPaneToggle("randomizeImage", {
+                  label: strings.RandomizeImageToggleLabel
                 })
               ]
             }

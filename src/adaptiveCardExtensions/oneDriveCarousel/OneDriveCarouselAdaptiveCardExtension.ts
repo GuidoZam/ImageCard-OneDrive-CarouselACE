@@ -13,6 +13,7 @@ export interface IOneDriveCarouselAdaptiveCardExtensionProps {
   iconProperty: string;
   selectedDriveId: string;
   timerMinutes: number;
+  randomizeImage: boolean;
 }
 
 export interface IOneDriveCarouselAdaptiveCardExtensionState {
@@ -160,17 +161,34 @@ export default class OneDriveCarouselAdaptiveCardExtension extends BaseAdaptiveC
   private updateImageIndex = () => {
     if(this.state.targetFolder && 
       this.state.targetFolder.children && 
-      this.state.targetFolder.children.length > 0) {      
+      this.state.targetFolder.children.length > 0) {
         var i = this.state.itemIndex;
-        i++;
-        if(i >= this.state.targetFolder.children.length) {
-          i = 0;
+
+        if(this.properties.randomizeImage == true) {
+          i = this.randomIndex(0, this.state.targetFolder.children.length - 1);
+        }
+        else {
+          i++;
+          if(i >= this.state.targetFolder.children.length) {
+            i = 0;
+          }
         }
 
         this.setState({
           itemIndex: i
         });
     }
+  }
+
+  private randomIndex(min, max) { 
+    let result = Math.floor(Math.random() * (max - min + 1) + min);
+
+    // Avoid displaying the same image again
+    if(result == this.state.itemIndex) {
+      return this.randomIndex(min, max);
+    }
+
+    return result;
   }
 
   private setError = (error: object) => {
