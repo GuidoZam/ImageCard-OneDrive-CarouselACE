@@ -8,7 +8,8 @@
             "text": "${detailsLabel}",
             "wrap": true,
             "size": "MediuLabelm",
-            "spacing": "Large"
+            "spacing": "Large",
+            "weight": "bolder"
         },
         {
             "type": "Container",

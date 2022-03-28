@@ -17,7 +17,6 @@ export class QuickView extends BaseAdaptiveCardView<
   IQuickViewData
 > {
   public get data(): IQuickViewData {
-    console.log(this.state.targetFolder);
     return {
       detailsLabel: strings.DetailsLabel,
       fileNameLabel: strings.FileNameLabel,
