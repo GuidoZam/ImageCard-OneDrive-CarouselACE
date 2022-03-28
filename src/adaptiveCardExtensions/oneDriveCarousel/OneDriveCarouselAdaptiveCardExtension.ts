@@ -145,6 +145,11 @@ export default class OneDriveCarouselAdaptiveCardExtension extends BaseAdaptiveC
             return;
           }
 
+          if(targetFolder && targetFolder.children) {
+            // Remove the non image children
+            targetFolder.children = targetFolder.children.filter(c => c.image);
+          }
+
           this.setState({
             targetFolder: targetFolder
           });
