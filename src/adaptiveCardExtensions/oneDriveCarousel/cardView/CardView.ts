@@ -34,10 +34,44 @@ export class CardView extends BaseImageCardView<IOneDriveCarouselAdaptiveCardExt
   }
 
   public get data(): IImageCardParameters {
+
+    
+
     return {
-      primaryText: (this.state.error) ? strings.ErrorMessage : ((this.properties.description) ? this.properties.description : strings.PrimaryText),
-      imageUrl: (this.state.error) ? require('../assets/Error.png') : ((this.state.targetFolder && this.state.targetFolder.children) ? this.state.targetFolder.children[this.state.itemIndex].webUrl : require('../assets/MicrosoftLogo.png'))
+      primaryText: this.getPrimaryText(),
+      imageUrl: this.getImageUrl()
     };
+  }
+
+  private getPrimaryText(): string {
+    if (this.state.error) {
+      return strings.ErrorMessage;
+    }
+    
+    let primaryText: string = strings.PrimaryText;
+    
+    if(this.properties.description) {
+      primaryText = this.properties.description;
+    }
+    else if (this.state.targetFolder) {
+      primaryText = this.state.targetFolder.name;
+    }
+
+    return primaryText;
+  }
+
+  private getImageUrl(): string {
+    if (this.state.error) {
+      return require('../assets/Error.png');
+    }
+    
+    let imageUrl: string = require('../assets/MicrosoftLogo.png');
+    
+    if (this.state.targetFolder && this.state.targetFolder.children) {
+      imageUrl = this.state.targetFolder.children[this.state.itemIndex].webUrl;
+    }
+
+    return imageUrl;
   }
 
   public get onCardSelection(): IQuickViewCardAction | IExternalLinkCardAction | undefined {
