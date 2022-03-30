@@ -1,7 +1,7 @@
 define([], function() {
   return {
-    "PropertyPaneDescription": "Description",
-    "BasicGroupName": "Group Name",
+    "PropertyPaneDescription": "Viva Connection Adaptive Card Extension (ACE) that shows a carousel of the images inside a OneDrive folder.",
+    "BasicGroupName": "Settings",
     "DescriptionFieldLabel": "Description Field",
     "TitleFieldLabel": "Card Title",
     "IconPropertyFieldLabel": "Card Icon",
