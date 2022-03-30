@@ -16,7 +16,9 @@ export class CardView extends BaseImageCardView<IOneDriveCarouselAdaptiveCardExt
   public get cardButtons():[ICardButton] | [ICardButton, ICardButton] | undefined {
     var buttons = [];
     
-    if(!this.state.error && this.properties.hideButtons == false) {
+    if(!this.state.error && 
+      (this.properties.hideButtons == undefined || this.properties.hideButtons == false) &&
+       this.state.targetFolder != undefined) {
       buttons = [
         {
           title: strings.QuickViewButton,
