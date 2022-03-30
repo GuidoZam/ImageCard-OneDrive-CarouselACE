@@ -33,6 +33,9 @@ export class OneDriveCarouselPropertyPane {
                 }),
                 PropertyPaneToggle("randomizeImage", {
                   label: strings.RandomizeImageToggleLabel
+                }),
+                PropertyPaneToggle("hideButtons", {
+                  label: strings.HideButtonsLabel
                 })
               ]
             }

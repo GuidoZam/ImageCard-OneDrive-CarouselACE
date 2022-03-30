@@ -16,7 +16,8 @@ declare interface IOneDriveCarouselAdaptiveCardExtensionStrings {
   FileNameLabel: string;
   SizeLabel: string;
   ModifiedLabel: string;
-  RandomizeImageToggleLabel: string;  
+  RandomizeImageToggleLabel: string;
+  HideButtonsLabel: string;
 }
 
 declare module 'OneDriveCarouselAdaptiveCardExtensionStrings' {

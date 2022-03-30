@@ -17,6 +17,7 @@ define([], function() {
     "FileNameLabel": "File name",
     "SizeLabel": "Size",
     "ModifiedLabel": "Modified",
-    "RandomizeImageToggleLabel": "Randomize selected image"
+    "RandomizeImageToggleLabel": "Randomize selected image",
+    "HideButtonsLabel": "Hide buttons"
   }
 });

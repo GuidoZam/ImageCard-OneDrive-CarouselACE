@@ -14,6 +14,7 @@ export interface IOneDriveCarouselAdaptiveCardExtensionProps {
   selectedDriveId: string;
   timerMinutes: number;
   randomizeImage: boolean;
+  hideButtons: boolean;
 }
 
 export interface IOneDriveCarouselAdaptiveCardExtensionState {
@@ -60,7 +61,7 @@ export default class OneDriveCarouselAdaptiveCardExtension extends BaseAdaptiveC
         }
 
         this.setState({
-          rootDriveId: (drives.value && drives.value.length > 0) ? drives.value[0].id : undefined
+          rootDriveId: (drives && drives.value && drives.value.length > 0) ? drives.value[0].id : undefined
         });
         
         this.loadDrives();
