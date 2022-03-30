@@ -11,16 +11,6 @@ export class OneDriveFullImageCarouselPropertyPane {
             {
               groupName: strings.BasicGroupName,
               groupFields: [
-                PropertyPaneTextField('title', {
-                  label: strings.TitleFieldLabel
-                }),
-                PropertyPaneTextField('iconProperty', {
-                  label: strings.IconPropertyFieldLabel
-                }),
-                PropertyPaneTextField('description', {
-                  label: strings.DescriptionFieldLabel,
-                  multiline: true
-                }),
                 PropertyPaneDropdown("selectedDriveId", {
                   label: strings.SelectedDriveIdDropdownLabel,
                   options: drivesResults,

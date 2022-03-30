@@ -13,7 +13,9 @@ export class CardView extends BaseBasicCardView<IOneDriveFullImageCarouselAdapti
   public get cardButtons(): [ICardButton] | [ICardButton, ICardButton] | undefined {
     var buttons = [];
     
-    if(!this.state.error && this.properties.fullBleed == false) {
+    if(!this.state.error &&
+       (this.properties.fullBleed == undefined || this.properties.fullBleed == false) &&
+       this.state.targetFolder != undefined) {
       buttons = [
         {
           title: strings.QuickViewButton,

@@ -8,9 +8,6 @@ import { MSGraphClient } from '@microsoft/sp-http';
 import gu from './GraphUtility';
 
 export interface IOneDriveFullImageCarouselAdaptiveCardExtensionProps {
-  title: string;
-  description: string;
-  iconProperty: string;
   selectedDriveId: string;
   timerMinutes: number;
   randomizeImage: boolean;
@@ -18,7 +15,6 @@ export interface IOneDriveFullImageCarouselAdaptiveCardExtensionProps {
 }
 
 export interface IOneDriveFullImageCarouselAdaptiveCardExtensionState {
-  description: string;
   rootDriveId: string;
   drivesResults: IPropertyPaneDropdownOption[];
   itemIndex: number;
@@ -38,7 +34,6 @@ export default class OneDriveFullImageCarouselAdaptiveCardExtension extends Base
 
   public onInit(): Promise<void> {
     this.state = {
-      description: this.properties.description,
       rootDriveId: undefined,
       drivesResults: undefined,
       itemIndex: 0,
@@ -77,14 +72,6 @@ export default class OneDriveFullImageCarouselAdaptiveCardExtension extends Base
     });
 
     return Promise.resolve();
-  }
-
-  public get title(): string {
-    return this.properties.title;
-  }
-
-  protected get iconProperty(): string {
-    return this.properties.iconProperty || require('./assets/SharePointLogo.svg');
   }
 
   protected loadPropertyPaneResources(): Promise<void> {
