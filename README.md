@@ -2,9 +2,25 @@
 
 ## Summary
 
-Short summary on functionality and used technologies.
+Viva Connection Adaptive Card Extension (ACE) that shows a carousel of the images inside a OneDrive folder.
 
-[picture of the solution in action, if possible]
+![CardView](./assets/QuickViewAndCardView.png)
+
+![CardView](./assets/CardView.png)
+
+![QuickView](./assets/QuickView.png)
+
+![Property Pane](./assets/PropertyPane.png)
+
+## Designer
+
+Just want to see the Adaptive Card template?
+
+<p>
+    <a href="https://adaptivecards.io/designer/index.html?card=https%3A%2F%2Fraw.githubusercontent.com%2FGuidoZam%2FImageCard-OneDrive-CarouselACE%2Fmain%2Fsrc%2FadaptiveCardExtensions%2FoneDriveCarousel%2FquickView%2Ftemplate%2FQuickViewTemplate.json">
+        <img src="https://raw.githubusercontent.com/GuidoZam/ImageCard-OneDrive-CarouselACE/main/assets/btn-open-in-designer.png" alt="Open in Adaptive Card Designer" />
+    </a>
+</p>
 
 ## Used SharePoint Framework Version
 
@@ -17,22 +33,22 @@ Short summary on functionality and used technologies.
 
 > Get your own free development tenant by subscribing to [Microsoft 365 developer program](http://aka.ms/o365devprogram)
 
+
 ## Prerequisites
 
-> Any special pre-requisites?
+> None
 
 ## Solution
 
 Solution|Author(s)
 --------|---------
-folder name | Author details (name, company, twitter alias with link)
+image-card-one-drive-carousel-ace | [GuidoZam](https://github.com/GuidoZam)
 
 ## Version history
 
 Version|Date|Comments
 -------|----|--------
-1.1|March 10, 2021|Update comment
-1.0|January 29, 2021|Initial release
+1.0|March 30, 2022|Initial release
 
 ## Disclaimer
 
@@ -48,21 +64,9 @@ Version|Date|Comments
   - **npm install**
   - **gulp serve**
 
-> Include any additional steps as needed.
-
 ## Features
 
-Description of the extension that expands upon high-level summary above.
-
-This extension illustrates the following concepts:
-
-- topic 1
-- topic 2
-- topic 3
-
-> Notice that better pictures and documentation will increase the sample usage and the value you are providing for others. Thanks for your submissions advance.
-
-> Share your web part with others through Microsoft 365 Patterns and Practices program to get visibility and exposure. More details on the community, open-source projects and other activities from http://aka.ms/m365pnp.
+Viva Connection Adaptive Card Extension (ACE) that shows an auto updating carousel of the images placed inside a OneDrive folder. It is possible to set a time range (in minutes) to specify the timing for the updates and is also possible to randomize the selected image.
 
 ## References
 
