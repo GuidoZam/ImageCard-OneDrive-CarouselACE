@@ -1,7 +1,7 @@
-import { IPropertyPaneConfiguration, PropertyPaneTextField, IPropertyPaneDropdownOption, PropertyPaneDropdown, PropertyPaneSlider, PropertyPaneToggle } from '@microsoft/sp-property-pane';
-import * as strings from 'OneDriveCarouselAdaptiveCardExtensionStrings';
+import { IPropertyPaneConfiguration, IPropertyPaneDropdownOption, PropertyPaneDropdown, PropertyPaneSlider, PropertyPaneTextField, PropertyPaneToggle } from '@microsoft/sp-property-pane';
+import * as strings from 'OneDriveFullImageCarouselAdaptiveCardExtensionStrings';
 
-export class OneDriveCarouselPropertyPane {
+export class OneDriveFullImageCarouselPropertyPane {
   public getPropertyPaneConfiguration(drivesResults: IPropertyPaneDropdownOption[]): IPropertyPaneConfiguration {
     return {
       pages: [
@@ -34,8 +34,8 @@ export class OneDriveCarouselPropertyPane {
                 PropertyPaneToggle("randomizeImage", {
                   label: strings.RandomizeImageToggleLabel
                 }),
-                PropertyPaneToggle("hideButtons", {
-                  label: strings.HideButtonsLabel
+                PropertyPaneToggle("fullBleed", {
+                  label: strings.FullBleedLabel
                 })
               ]
             }

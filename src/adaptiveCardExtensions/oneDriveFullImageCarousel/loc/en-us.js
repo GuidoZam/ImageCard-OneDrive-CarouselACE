@@ -18,6 +18,6 @@ define([], function() {
     "SizeLabel": "Size",
     "ModifiedLabel": "Modified",
     "RandomizeImageToggleLabel": "Randomize selected image",
-    "HideButtonsLabel": "Hide buttons"
+    "FullBleedLabel": "Full bleed"
   }
 });

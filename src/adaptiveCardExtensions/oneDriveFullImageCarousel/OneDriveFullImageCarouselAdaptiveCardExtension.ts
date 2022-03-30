@@ -2,22 +2,22 @@ import { IPropertyPaneConfiguration, IPropertyPaneDropdownOption } from '@micros
 import { BaseAdaptiveCardExtension } from '@microsoft/sp-adaptive-card-extension-base';
 import { CardView } from './cardView/CardView';
 import { QuickView } from './quickView/QuickView';
-import { OneDriveCarouselPropertyPane } from './OneDriveCarouselPropertyPane';
+import { OneDriveFullImageCarouselPropertyPane } from './OneDriveFullImageCarouselPropertyPane';
 import * as MicrosoftGraph from '@microsoft/microsoft-graph-types';
 import { MSGraphClient } from '@microsoft/sp-http';
 import gu from './GraphUtility';
 
-export interface IOneDriveCarouselAdaptiveCardExtensionProps {
+export interface IOneDriveFullImageCarouselAdaptiveCardExtensionProps {
   title: string;
   description: string;
   iconProperty: string;
   selectedDriveId: string;
   timerMinutes: number;
   randomizeImage: boolean;
-  hideButtons: boolean;
+  fullBleed: boolean;
 }
 
-export interface IOneDriveCarouselAdaptiveCardExtensionState {
+export interface IOneDriveFullImageCarouselAdaptiveCardExtensionState {
   description: string;
   rootDriveId: string;
   drivesResults: IPropertyPaneDropdownOption[];
@@ -26,14 +26,14 @@ export interface IOneDriveCarouselAdaptiveCardExtensionState {
   error: object;
 }
 
-const CARD_VIEW_REGISTRY_ID: string = 'OneDriveCarousel_CARD_VIEW';
-export const QUICK_VIEW_REGISTRY_ID: string = 'OneDriveCarousel_QUICK_VIEW';
+const CARD_VIEW_REGISTRY_ID: string = 'OneDriveFullImageCarousel_CARD_VIEW';
+export const QUICK_VIEW_REGISTRY_ID: string = 'OneDriveFullImageCarousel_QUICK_VIEW';
 
-export default class OneDriveCarouselAdaptiveCardExtension extends BaseAdaptiveCardExtension<
-  IOneDriveCarouselAdaptiveCardExtensionProps,
-  IOneDriveCarouselAdaptiveCardExtensionState
+export default class OneDriveFullImageCarouselAdaptiveCardExtension extends BaseAdaptiveCardExtension<
+  IOneDriveFullImageCarouselAdaptiveCardExtensionProps,
+  IOneDriveFullImageCarouselAdaptiveCardExtensionState
 > {
-  private _deferredPropertyPane: OneDriveCarouselPropertyPane | undefined;
+  private _deferredPropertyPane: OneDriveFullImageCarouselPropertyPane | undefined;
   private updateImageTimer;
 
   public onInit(): Promise<void> {
@@ -89,12 +89,12 @@ export default class OneDriveCarouselAdaptiveCardExtension extends BaseAdaptiveC
 
   protected loadPropertyPaneResources(): Promise<void> {
     return import(
-      /* webpackChunkName: 'OneDriveCarousel-property-pane'*/
-      './OneDriveCarouselPropertyPane'
+      /* webpackChunkName: 'OneDriveFullImageCarousel-property-pane'*/
+      './OneDriveFullImageCarouselPropertyPane'
     )
       .then(
         (component) => {
-          this._deferredPropertyPane = new component.OneDriveCarouselPropertyPane();
+          this._deferredPropertyPane = new component.OneDriveFullImageCarouselPropertyPane();
         }
       );
   }
@@ -117,7 +117,7 @@ export default class OneDriveCarouselAdaptiveCardExtension extends BaseAdaptiveC
     return CARD_VIEW_REGISTRY_ID;
   }
 
-  protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {    
+  protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
     return this._deferredPropertyPane!.getPropertyPaneConfiguration(this.state.drivesResults);
   }
 

@@ -1,4 +1,4 @@
-declare interface IOneDriveCarouselAdaptiveCardExtensionStrings {
+declare interface IOneDriveFullImageCarouselAdaptiveCardExtensionStrings {
   PropertyPaneDescription: string;
   BasicGroupName: string;
   DescriptionFieldLabel: string;
@@ -17,10 +17,10 @@ declare interface IOneDriveCarouselAdaptiveCardExtensionStrings {
   SizeLabel: string;
   ModifiedLabel: string;
   RandomizeImageToggleLabel: string;
-  HideButtonsLabel: string;
+  FullBleedLabel: string;
 }
 
-declare module 'OneDriveCarouselAdaptiveCardExtensionStrings' {
-  const strings: IOneDriveCarouselAdaptiveCardExtensionStrings;
+declare module 'OneDriveFullImageCarouselAdaptiveCardExtensionStrings' {
+  const strings: IOneDriveFullImageCarouselAdaptiveCardExtensionStrings;
   export = strings;
 }

@@ -1,7 +1,7 @@
 {
   "@microsoft/generator-sharepoint": {
     "plusBeta": false,
-    "isCreatingSolution": true,
+    "isCreatingSolution": false,
     "environment": "spo",
     "version": "1.13.0",
     "libraryName": "image-card-one-drive-carousel-ace",
@@ -9,6 +9,6 @@
     "packageManager": "npm",
     "isDomainIsolated": false,
     "componentType": "adaptiveCardExtension",
-    "aceTemplateType": "Image"
+    "aceTemplateType": "Basic"
   }
 }

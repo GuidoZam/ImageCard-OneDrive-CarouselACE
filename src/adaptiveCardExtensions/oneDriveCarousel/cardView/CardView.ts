@@ -16,7 +16,7 @@ export class CardView extends BaseImageCardView<IOneDriveCarouselAdaptiveCardExt
   public get cardButtons():[ICardButton] | [ICardButton, ICardButton] | undefined {
     var buttons = [];
     
-    if(!this.state.error) {
+    if(!this.state.error && this.properties.hideButtons == false) {
       buttons = [
         {
           title: strings.QuickViewButton,
@@ -33,10 +33,7 @@ export class CardView extends BaseImageCardView<IOneDriveCarouselAdaptiveCardExt
     return <[ICardButton] | [ICardButton, ICardButton] | undefined>buttons;
   }
 
-  public get data(): IImageCardParameters {
-
-    
-
+  public get data(): IImageCardParameters {    
     return {
       primaryText: this.getPrimaryText(),
       imageUrl: this.getImageUrl()
