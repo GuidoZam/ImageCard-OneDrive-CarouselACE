@@ -4,11 +4,19 @@
 
 Viva Connection Adaptive Card Extension (ACE) that shows a carousel of the images inside a OneDrive folder.
 
+Quick view and Card view together
+
 ![CardView](./assets/QuickViewAndCardView.png)
+
+Card view
 
 ![CardView](./assets/CardView.png)
 
+Quick view
+
 ![QuickView](./assets/QuickView.png)
+
+Property Pane
 
 ![Property Pane](./assets/PropertyPane.png)
 
@@ -48,7 +56,7 @@ image-card-one-drive-carousel | [GuidoZam](https://github.com/GuidoZam)
 
 Version|Date|Comments
 -------|----|--------
-1.0|March 30, 2022|Initial release
+1.0|April 11, 2022|Initial release
 
 ## Disclaimer
 
