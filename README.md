@@ -17,7 +17,7 @@ Viva Connection Adaptive Card Extension (ACE) that shows a carousel of the image
 Just want to see the Adaptive Card template?
 
 <p>
-    <a href="https://adaptivecards.io/designer/index.html?card=https%3A%2F%2Fraw.githubusercontent.com%2FGuidoZam%2FImageCard-OneDrive-CarouselACE%2Fmain%2Fsrc%2FadaptiveCardExtensions%2FoneDriveCarousel%2FquickView%2Ftemplate%2FQuickViewTemplate.json&data=https%3A%2F%2Fraw.githubusercontent.com%2FGuidoZam%2FImageCard-OneDrive-CarouselACE%2Fmain%2Fsrc%2FadaptiveCardExtensions%2FoneDriveCarousel%2FquickView%2Ftemplate%2FquickViewSampleData.json">
+    <a href="https://adaptivecards.io/designer/index.html?card=https%3A%2F%2Fraw.githubusercontent.com%2FGuidoZam%2FImageCard-OneDrive-CarouselACE%2Fmain%2Fsrc%2FadaptiveCardExtensions%2FoneDriveCarousel%2FquickView%2Ftemplate%2FQuickViewTemplate.json&data=https%3A%2F%2Fraw.githubusercontent.com%2FGuidoZam%2FImageCard-OneDrive-CarouselACE%2Fmain%2Fassets%2FquickViewSampleData.json">
         <img src="https://raw.githubusercontent.com/GuidoZam/ImageCard-OneDrive-CarouselACE/main/assets/btn-open-in-designer.png" alt="Open in Adaptive Card Designer" />
     </a>
 </p>
