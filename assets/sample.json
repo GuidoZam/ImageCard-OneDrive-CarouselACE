@@ -3,7 +3,7 @@
   "source": "pnp",
   "title": "OneDrive Carousel",
   "shortDescription": "This solution provides a carousel that takes images from a OneDrive folder using microsoft graph and ACE.",
-  "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/ImageCard-OneDriveCarusel",
+  "url": "https://github.com/pnp/sp-dev-fx-aces/tree/main/samples/ImageCard-OneDriveCarousel",
   "longDescription": [
     "This solution provides a carousel that takes images from a OneDrive folder using microsoft graph and ACE."
   ],
@@ -25,7 +25,7 @@
   "thumbnails": [{
     "type": "image",
     "order": 100,
-    "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/ImageCard-OneDriveCarusel/assets/QuickViewAndCardView.png",
+    "url": "https://raw.githubusercontent.com/pnp/sp-dev-fx-aces/main/samples/ImageCard-OneDriveCarousel/assets/QuickViewAndCardView.png",
     "alt": "Preview"
   }],
   "authors": [{
