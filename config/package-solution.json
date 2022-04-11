@@ -1,7 +1,7 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
   "solution": {
-    "name": "image-card-one-drive-carousel-ace-client-side-solution",
+    "name": "image-card-one-drive-carousel-client-side-solution",
     "id": "cb4a77b7-4d92-4e4c-a402-9a2c33a451f1",
     "version": "1.0.0.0",
     "includeClientSideAssets": true,
@@ -16,6 +16,6 @@
     }
   },
   "paths": {
-    "zippedPackage": "solution/image-card-one-drive-carousel-ace.sppkg"
+    "zippedPackage": "solution/image-card-one-drive-carousel.sppkg"
   }
 }
